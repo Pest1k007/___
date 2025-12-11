@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pest1k - Разработка сайтов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Экран загрузки -->
+    <div id="loader" class="loader">
+        <div class="loader-container">
+            <div class="nickname-loader">Pest1k</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="loader-subtitle">Инициализация системы...</div>
+        </div>
+        <div class="binary-background">
+            <!-- Динамически генерируемые цифры -->
+        </div>
+    </div>
+
+    <!-- Главный экран -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Фон с иероглифами -->
+        <div class="background-hieroglyphs">
+            <!-- Динамически генерируемые иероглифы -->
+        </div>
+        
+        <!-- Фон с двоичным кодом -->
+        <div class="binary-code-bg">
+            <!-- Динамически генерируемые цифры -->
+        </div>
+        
+        <header class="header">
+            <div class="nickname-container">
+                <h1 class="nickname" id="pulsing-nickname">Pest1k</h1>
+                <p class="subtitle">Веб-разработчик & наставник</p>
+            </div>
+        </header>
+        
+        <main class="main">
+            <div class="welcome-container">
+                <div class="welcome-text">
+                    <h2><span class="highlight">Привет, друг</span></h2>
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <span>Мне чужого не надо, но свое я возьму, чье бы оно не было</span>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                </div>
+                
+                <div class="buttons-container">
+                    <div class="buttons-grid">
+                        <button class="btn btn-primary" onclick="navigateTo('profile')">
+                            <i class="fas fa-user"></i>
+                            <span>Мой профиль</span>
+                        </button>
+                        
+                        <button class="btn btn-secondary" onclick="navigateTo('project')">
+                            <i class="fab fa-telegram"></i>
+                            <span>Мой проект (TG)</span>
+                        </button>
+                        
+                        <button class="btn btn-tertiary" onclick="navigateTo('price')">
+                            <i class="fas fa-tags"></i>
+                            <span>Мой прайс</span>
+                        </button>
+                        
+                        <a href="https://t.me/Pest1k_01" target="_blank" class="btn btn-contact">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Перейти в личные сообщения</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2024 Pest1k. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- Страница профиля -->
+    <div id="profile-page" class="page hidden">
+        <div class="page-header">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <h2><i class="fas fa-user"></i> Мой профиль</h2>
+        </div>
+        <div class="page-content">
+            <div class="profile-card">
+                <div class="avatar">P</div>
+                <h3>Pest1k</h3>
+                <p class="profile-tag">Веб-разработчик</p>
+                <div class="profile-info">
+                    <p><i class="fas fa-code"></i> Специализация: создание сайтов на заказ</p>
+                    <p><i class="fas fa-rocket"></i> Опыт: 5+ лет в разработке</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Направление: Frontend & Backend</p>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Адаптивный дизайн</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Страница проекта -->
+    <div id="project-page" class="page hidden">
+        <div class="page-header">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <h2><i class="fab fa-telegram"></i> Мой проект</h2>
+        </div>
+        <div class="page-content">
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <h3>TG ЛепИсток</h3>
+                <p class="project-description">
+                    Мой Telegram-канал с полезными материалами по веб-разработке, 
+                    советами и актуальными проектами.
+                </p>
+                <div class="project-links">
+                    <a href="https://t.me/tglepistok" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Перейти в канал
+                    </a>
+                    <a href="https://t.me/+pK9yM7xhO9kzMjcy" target="_blank" class="project-link">
+                        <i class="fas fa-users"></i> Присоединиться к чату
+                    </a>
+                </div>
+                <div class="project-features">
+                    <div class="feature">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Актуальные новости</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-code"></i>
+                        <span>Полезные материалы</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-comments"></i>
+                        <span>Обсуждения</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Страница прайса -->
+    <div id="price-page" class="page hidden">
+        <div class="page-header">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i> Назад
+            </button>
+            <h2><i class="fas fa-tags"></i> Мой прайс</h2>
+        </div>
+        <div class="page-content">
+            <div class="price-section">
+                <h3 class="price-title">
+                    <i class="fas fa-laptop-code"></i> 
+                    Делаю сайты на заказ
+                </h3>
+                <div class="price-range">
+                    <span class="price-amount">от 200 ₽ - 1 000 ₽</span>
+                    <span class="price-note">в зависимости от сложности</span>
+                </div>
+            </div>
+            
+            <div class="price-section">
+                <h3 class="price-title">
+                    <i class="fas fa-graduation-cap"></i> 
+                    Обучаю созданию сайтов
+                </h3>
+                <div class="price-cards">
+                    <div class="price-card">
+                        <div class="price-card-header">
+                            <h4>Мануал</h4>
+                            <div class="price">250 ₽</div>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Подробное руководство</li>
+                            <li><i class="fas fa-check"></i> Пошаговая инструкция</li>
+                            <li><i class="fas fa-check"></i> Готовые примеры кода</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-card">
+                        <div class="price-card-header">
+                            <h4>Туториал</h4>
+                            <div class="price">350 ₽</div>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Видео-обучение</li>
+                            <li><i class="fas fa-check"></i> Разбор примеров</li>
+                            <li><i class="fas fa-check"></i> Практические задания</li>
+                            <li><i class="fas fa-check"></i> Ответы на вопросы</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-card">
+                        <div class="price-card-header">
+                            <h4>Личное обучение</h4>
+                            <div class="price">500 ₽</div>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Индивидуальный подход</li>
+                            <li><i class="fas fa-check"></i> Прямое общение</li>
+                            <li><i class="fas fa-check"></i> Разбор ваших проектов</li>
+                            <li><i class="fas fa-check"></i> Поддержка после обучения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-note">
+                <p><i class="fas fa-info-circle"></i> Для уточнения деталей и заказа нажмите кнопку "Перейти в личные сообщения" на главной странице</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
